@@ -1,6 +1,6 @@
 # Possible bug in ecto.migrate command when used with --prefix options
 
-When I run `mix ecto.migrate --prefix private`, the command fails if no `schema_migrations` exists in the `public` prefix.
+When I run `mix ecto.migrate --prefix private`, the command fails if no `schema_migrations` table exists in the `public` prefix.
 
 ## Environment
 
