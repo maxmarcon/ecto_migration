@@ -33,7 +33,7 @@ When I run `mix ecto.migrate --prefix private`, the command fails if no `schema_
 ## Actual behavior
 
 1. `schema_migrations` is created in the `private` schema
-2. `sample_table` has not been created
+2. `sample_table` is not being created
 3. `schema_migrations` is empty
 4. `mix ecto.migrate` fails with the error: 
 
