@@ -17,7 +17,7 @@ When I run `mix ecto.migrate --prefix private`, the command fails if no `schema_
 ## Steps to reproduce:
 
 1. `mix deps.get`
-2. `doocker compose up -d`
+2. `docker compose up -d`
 3. `mix ecto.create`
 4. Create schema `private`. You can use your favorite DB client or psql with: 
    1. `psql -h localhost -U postgres ecto_migration` 
