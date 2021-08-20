@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  postgres:
+    container_name: ecto_migration_db
+    image: postgres:13-alpine
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+    ports:
+      - 5432:5432
+
