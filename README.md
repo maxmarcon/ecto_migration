@@ -1,5 +1,7 @@
 # Possible bug in ecto.migrate command when used with --prefix options
 
+When I run `mix ecto.migrate --prefix private`, the command fails if no `schema_migrations` exists in the `public` prefix.
+
 ## Environment
 
 * Elixir: 1.12.2
@@ -12,10 +14,6 @@
   * postgrex: 0.15.10
   * Others: see `mix.lock` file
   
-## Expected behavior
-
-`mix ecto.migrate --prefix private` should create a `schema_migrations` table under the `private` prefix and run all migrations under the `private` prefix.
-
 ## Steps to reproduce:
 
 1. `mix deps.get`
@@ -32,7 +30,7 @@
 1. `schema_migrations` and `sample_table` are created in the `private` schema
 2. `schema_migrations` contains the timestamp of the migration that created `sample_table`
 
-### Actual behavior
+## Actual behavior
 
 1. `schema_migrations` is created in the `private` schema
 2. `sample_table` has not been created
